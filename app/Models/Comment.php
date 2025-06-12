@@ -2,21 +2,20 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\BelongsTo;
-use Illuminate\Database\Eloquent\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Comment extends Model
 {
-    public function user(): BelongsTo{
-        return $this->belongsTo(User::class, 'user_id');
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 
-    public function post(): BelongsToMany{
-        return $this->belongsToMany(Post::class, 'comment_post');
-    }
-
-    public function comment(): BelongsTo{
-        return $this->belongsTo(Comment::class, 'comment_id');
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Post::class);
     }
 }

@@ -18,6 +18,7 @@ class PostFactory extends Factory
     {
         $status = fake()->randomElement(['D', 'P', 'I']);
         $title = fake()->title();
+        
         return [
             "title" => $title,
             "content" => fake()->paragraph(),
