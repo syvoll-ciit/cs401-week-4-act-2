@@ -17,10 +17,10 @@ class RoleFactory extends Factory
     public function definition(): array
     {
 
-        $roles = ['A', 'C', 'S'];
+        //$roles = ['A', 'C', 'S'];
 
         return [
-             'role_name' => $this->faker->randomElement($roles),
+             //'role_name' => $this->faker->randomElement($roles),
              'description' => fake()->sentence()
         ];
     }

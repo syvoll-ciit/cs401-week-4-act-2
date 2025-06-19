@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Category extends Model
 {
+    use HasFactory;
+
+    protected $fillable = [
+        'category_name',
+        'slug',
+        'description'
+    ];
 
     public function posts(): BelongsToMany
     {
